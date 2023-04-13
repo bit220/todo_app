@@ -15,6 +15,7 @@ const useAddTask = () => {
         if (e.key === 'Enter') {
             const newTask = {
                 id: Number(currentId) + 1,
+                order: Number(currentId) + 1,
                 parentId: parentId,
                 checked: false,
                 text: e.target.value,
@@ -23,11 +24,11 @@ const useAddTask = () => {
 
             if (parentId) {
                 const parentTask = findTaskById(listOfTasks, parentId);
-                newTask.order = parentTask.children.length + 1;
+                // newTask.order = parentTask.children.length + 1;
                 parentTask.children.push(newTask);
                 dispatch({type: 'CHANGE_TASKS', payload: [...listOfTasks]});
             } else {
-                newTask.order = listOfTasks.length + 1;
+                // newTask.order = listOfTasks.length + 1;
                 dispatch({type: 'ADD_TASK', payload: newTask});
             }
 

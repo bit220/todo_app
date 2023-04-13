@@ -20,6 +20,10 @@ const Task = ({task, renderTask}) => {
 
     const removeTask = useRemoveTask()
 
+    const onChange = () => {
+
+    }
+
 
     return (
         <>
@@ -29,6 +33,7 @@ const Task = ({task, renderTask}) => {
                     type="checkbox"
                     className="task__checkbox"
                     checked={task.checked}
+                    onChange={onChange}
                 />
                 <label
                     htmlFor="checkbox"

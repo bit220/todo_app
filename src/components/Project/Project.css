@@ -39,10 +39,15 @@
     width: 300px;
     margin-right: 10px;
 }
-.search__input {
+.search__block {
+    display: flex;
     margin-bottom: 15px;
+    align-items: center;
+}
+.search__input {
     padding: 5px;
     width: 400px;
+    margin-right: 5px;
 }
 .search__input, .new-task-input {
     border: 2px solid dodgerblue;

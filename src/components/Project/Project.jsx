@@ -72,6 +72,11 @@ const Project = () => {
     const uploadTasks = useUploadTasks()
     const [downloadTasks, projectToDownload] = useDownloadTasks()
 
+    const resetSearch = (e) => {
+        e.preventDefault()
+        setSearchQuery('')
+    }
+
 
     return (
         <div>
@@ -106,13 +111,22 @@ const Project = () => {
                 </a>
             </div>
 
-            <input
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-                className="search__input"
-                type="text"
-                placeholder="Поиск"
-            />
+            <div className="search__block">
+                <input
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                    className="search__input"
+                    type="text"
+                    placeholder="Поиск"
+                />
+
+                {searchQuery &&
+                    <a href="" onClick={resetSearch} className="btn cancel-btn">
+                    </a>
+                }
+
+            </div>
+
 
             {filteredList.length > 0
                 ?
