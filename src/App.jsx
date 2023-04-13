@@ -1,7 +1,7 @@
-import React, {Component, useEffect, useLayoutEffect} from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Project from "./components/Project/Project";
-import {connect, useDispatch, useSelector} from "react-redux";
+import {connect} from "react-redux";
 import _ from "lodash";
 
 
